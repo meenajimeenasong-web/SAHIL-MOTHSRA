@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#06120e">
+<title>Sahil Mothsra – VIP Market Updates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Color grade: midnight green + emerald + antique gold */
+:root{
+  --bg:#06120e;--bg2:#0c231b;--panel:rgba(255,255,255,.045);--line:rgba(212,175,95,.3);
+  --text:#eef5f0;--muted:#9fb5a9;--em:#2fd08a;--em2:#12a366;--gold:#e3bf6a;--gold2:#b8903a;
+  --ink:#04170f;--warn-bg:rgba(227,191,106,.12);--warn-text:#ecd193;--glow:rgba(47,208,138,.35);
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){--bg:#f3f8f4;--bg2:#e0eee5;--panel:rgba(255,255,255,.8);--line:rgba(139,106,31,.35);--text:#0b1d15;--muted:#4d645a;--em:#0f9a60;--em2:#0b7a4b;--gold:#9a7421;--gold2:#7a5a14;--ink:#fff;--warn-bg:#fff3d6;--warn-text:#6e4600;--glow:rgba(15,154,96,.3)}
+}
+:root[data-theme="light"]{--bg:#f3f8f4;--bg2:#e0eee5;--panel:rgba(255,255,255,.8);--line:rgba(139,106,31,.35);--text:#0b1d15;--muted:#4d645a;--em:#0f9a60;--em2:#0b7a4b;--gold:#9a7421;--gold2:#7a5a14;--ink:#fff;--warn-bg:#fff3d6;--warn-text:#6e4600;--glow:rgba(15,154,96,.3)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;color:var(--text);font-family:"DM Sans","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;line-height:1.6;
+  background:radial-gradient(700px 420px at 15% -5%,var(--bg2),transparent 70%),radial-gradient(520px 360px at 100% 40%,rgba(227,191,106,.08),transparent 70%),var(--bg);
+  padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+.wrap{max-width:480px;margin:0 auto;padding:0 20px}
+
+/* Ticker */
+.ticker{overflow:hidden;border-bottom:1px solid var(--line);background:var(--panel);white-space:nowrap}
+.ticker-in{display:inline-block;padding:9px 0;animation:tick 22s linear infinite;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.08em}
+.ticker-in span{margin:0 22px}
+.ticker-in i{color:var(--em);font-style:normal}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* Hero */
+.hero{padding:32px 0 8px;text-align:left}
+.id{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.frame{flex:none;width:92px;height:92px;border-radius:26px;padding:3px;background:linear-gradient(140deg,var(--gold),var(--em) 60%,var(--gold2));box-shadow:0 0 30px var(--glow)}
+.frame img{width:100%;height:100%;border-radius:23px;object-fit:cover;display:block;background:var(--bg2)}
+.badge{display:inline-block;padding:3px 12px;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2a1c04;font-weight:700;font-size:12px;letter-spacing:.12em;margin-bottom:6px}
+h1{margin:0;font-family:Sora,"Segoe UI",sans-serif;font-size:27px;line-height:1.15;font-weight:800}
+.tag{margin:4px 0 0;color:var(--muted);font-size:14px}
+.headline{font-family:Sora,"Segoe UI",sans-serif;font-size:30px;line-height:1.2;font-weight:700;margin:0 0 12px}
+.lead{color:var(--muted);margin:0 0 22px}
+
+/* Buttons */
+.btn{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:17px 16px;border-radius:16px;overflow:hidden;text-decoration:none;font-weight:700;font-size:18px;color:var(--ink);
+  background:linear-gradient(135deg,var(--em),var(--em2));box-shadow:0 10px 28px var(--glow),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .15s}
+.btn::after{content:"";position:absolute;top:0;left:-60%;width:36%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 3.6s ease-in-out infinite}
+@keyframes shine{0%,62%{left:-60%}100%{left:130%}}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn svg{width:22px;height:22px;flex:none}
+
+/* Sections */
+h2{font-family:Sora,"Segoe UI",sans-serif;font-size:20px;margin:36px 0 14px}
+.cards{display:grid;gap:12px}
+.card{padding:16px;border-radius:16px;background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(6px)}
+.card b{display:block;font-family:Sora,sans-serif;font-size:16px;color:var(--gold);margin-bottom:2px}
+.card span{color:var(--muted);font-size:14px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s}
+.steps li{position:relative;padding:0 0 18px 48px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:var(--panel);border:1px solid var(--em);color:var(--em);display:grid;place-items:center;font-weight:700}
+.steps li:not(:last-child)::after{content:"";position:absolute;left:16px;top:36px;bottom:2px;width:2px;background:var(--line)}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:14px}
+.note{margin:30px 0 0;padding:13px 15px;border-radius:14px;background:var(--warn-bg);color:var(--warn-text);border:1px solid var(--line);font-size:14px}
+.cta2{margin-top:24px}
+.disclaimer{margin:28px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+
+/* Sticky bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s}
+.bar.show{transform:none}
+.bar .btn{max-width:448px;margin:0 auto;padding:14px 16px;font-size:17px}
+@media (prefers-reduced-motion:reduce){.ticker-in,.btn::after{animation:none}.bar,.btn{transition:none}html{scroll-behavior:auto}}
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2468864363645716');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2468864363645716&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-in">
+    <span>NIFTY <i>●</i></span><span>BANKNIFTY <i>●</i></span><span>SENSEX <i>●</i></span><span>DAILY UPDATES <i>●</i></span>
+    <span>NIFTY <i>●</i></span><span>BANKNIFTY <i>●</i></span><span>SENSEX <i>●</i></span><span>DAILY UPDATES <i>●</i></span>
+    <span>NIFTY <i>●</i></span><span>BANKNIFTY <i>●</i></span><span>SENSEX <i>●</i></span><span>DAILY UPDATES <i>●</i></span>
+    <span>NIFTY <i>●</i></span><span>BANKNIFTY <i>●</i></span><span>SENSEX <i>●</i></span><span>DAILY UPDATES <i>●</i></span>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="id">
+      <div class="frame">
+        <img id="avatar" src="https://drive.google.com/thumbnail?id=1E2k0_zfdYFD1njCJdoZvbZQ3z94FNXTk&sz=w400" alt="Sahil Mothsra" width="86" height="86">
+      </div>
+      <div>
+        <span class="badge">VIP</span>
+        <h1>Sahil Mothsra</h1>
+        <p class="tag">Stock market updates &amp; analysis</p>
+      </div>
+    </div>
+
+    <p class="headline">NIFTY, BANKNIFTY &amp; SENSEX par daily updates</p>
+    <p class="lead">Market ki roz ki halchal aur analysis seedha Telegram par.</p>
+
+    <a id="hero-cta" class="btn" data-track="hero_cta" href="https://t.me/+ad8qCCGQGew5ZmZl" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.5c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.4-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.6 13.3l-4.7-1.5c-1-.3-1-1 .2-1.5L20.4 3.3c.9-.3 1.6.2 1.5 1Z"/></svg>
+      Join Telegram Channel
+    </a>
+  </section>
+
+  <h2>Channel par kya milta hai</h2>
+  <div class="cards">
+    <div class="card"><b>Daily updates</b><span>NIFTY, BANKNIFTY aur SENSEX ki roz ki halchal.</span></div>
+    <div class="card"><b>Market analysis</b><span>Chart aur important levels par nazar.</span></div>
+    <div class="card"><b>Seedha Telegram par</b><span>Alag app ya login ki zarurat nahi.</span></div>
+  </div>
+
+  <h2>Kaise join karein</h2>
+  <ol class="steps">
+    <li><b>Button dabayein</b><span>“Join Telegram Channel” par tap karein.</span></li>
+    <li><b>Telegram khulega</b><span>App ya web mein channel ka link khul jayega.</span></li>
+    <li><b>Join dabayein</b><span>Bas, updates aane lagenge.</span></li>
+  </ol>
+
+  <a class="btn cta2" data-track="bottom_cta" href="https://t.me/+ad8qCCGQGew5ZmZl" target="_blank" rel="noopener">Join Telegram Channel</a>
+
+  <div class="note">Yeh sirf educational content hai. Trading mein risk hota hai.</div>
+
+  <p class="disclaimer">Disclaimer: Is channel par di gayi jaankari sirf shiksha ke liye hai aur ise investment advice na samjhein. Share market investments market risk ke adheen hain. Koi bhi nivesh karne se pehle SEBI-registered advisor se salah lein. Past performance future returns ki guarantee nahi hai.</p>
+</main>
+
+<!-- Sticky bar: hero button scroll se bahar jaane par dikhta hai -->
+<div class="bar" id="bar">
+  <a class="btn" data-track="sticky_cta" href="https://t.me/+ad8qCCGQGew5ZmZl" target="_blank" rel="noopener">Join Telegram Channel</a>
+</div>
+
+<script>
+(function () {
+  // Safe tracker: ad-blocker ho to bhi page chalta rahe
+  function track(type, name, params) {
+    try {
+      if (typeof fbq !== 'function') return;
+      if (type === 'std') fbq('track', name, params || {});
+      else fbq('trackCustom', name, params || {});
+    } catch (e) {}
+  }
+
+  // Avatar fallback
+  var img = document.getElementById('avatar');
+  img.addEventListener('error', function () {
+    img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0c231b"/><text x="50" y="64" font-size="40" text-anchor="middle" fill="#e3bf6a" font-family="Georgia,serif">SM</text></svg>');
+  }, { once: true });
+
+  // Button tracking: Lead + custom event (button position ke saath)
+  document.querySelectorAll('[data-track]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var p = { content_name: 'Telegram Channel', button_position: el.getAttribute('data-track'), page: location.pathname };
+      track('std', 'Lead', p);
+      track('custom', 'TelegramJoinClick', p);
+    });
+  });
+
+  // Sticky bar: hero button dikhna band ho to bar dikhao
+  var bar = document.getElementById('bar');
+  var hero = document.getElementById('hero-cta');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      bar.classList.toggle('show', !es[0].isIntersecting);
+    }).observe(hero);
+  } else { bar.classList.add('show'); }
+
+  // Scroll depth 50% / 90%
+  var sent = {};
+  window.addEventListener('scroll', function () {
+    var h = document.documentElement;
+    var pct = Math.round((window.scrollY + window.innerHeight) / h.scrollHeight * 100);
+    [50, 90].forEach(function (m) {
+      if (pct >= m && !sent[m]) { sent[m] = true; track('custom', 'ScrollDepth', { percent: m }); }
+    });
+  }, { passive: true });
+
+  // 30 second engaged
+  setTimeout(function () { track('custom', 'Engaged30s'); }, 30000);
+
+  // Theme test: ?theme=light ya ?theme=dark
+  var t = new URLSearchParams(location.search).get('theme');
+  if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+</body>
+</html>
